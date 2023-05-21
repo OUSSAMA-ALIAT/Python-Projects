@@ -1,0 +1,35 @@
+
+
+
+data set 
+
+
+
+script :
+
+import pandas as pd
+import numpy as np
+import plotly.express as px
+import plotly.graph_objects as go
+import plotly.io as pio
+pio.templates.default = "plotly_white"
+
+data = pd.read_csv("train.csv")
+print(data.head())
+
+
+
+Let’s have a look at the information about the columns in the dataset:
+
+1
+print(data.info())
+
+Before moving forward, let’s have a look if the dataset has any null values or not:
+
+print(data.isnull().sum())
+1
+print(data.isnull().sum())
+
+The dataset doesn’t have any null values. As this dataset is labelled, let’s have a look at the Credit_Score column values:
+
+
