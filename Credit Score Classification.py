@@ -32,6 +32,65 @@ print(data.isnull().sum())
 
 The dataset doesn’t have any null values. As this dataset is labelled, let’s have a look at the Credit_Score column values:
 
+  Data Exploration
+The dataset has many features that can train a Machine Learning model for credit score classification. Let’s explore all the features one by one.
+
+I will start by exploring the occupation feature to know if the occupation of the person affects credit scores:
+
+1
+fig = px.box(data, 
+2
+             x="Occupation",  
+3
+             color="Credit_Score", 
+4
+             title="Credit Scores Based on Occupation", 
+5
+             color_discrete_map={'Poor':'red',
+6
+                                 'Standard':'yellow',
+7
+                                 'Good':'green'})
+8
+fig.show()
+
+
+There’s not much difference in the credit scores of all occupations mentioned in the data. Now let’s explore whether the Annual Income of the person impacts your credit scores or not:
+
+1
+fig = px.box(data, 
+2
+             x="Credit_Score", 
+3
+             y="Annual_Income", 
+4
+             color="Credit_Score",
+5
+             title="Credit Scores Based on Annual Income", 
+6
+             color_discrete_map={'Poor':'red',
+7
+                                 'Standard':'yellow',
+8
+                                 'Good':'green'})
+9
+fig.update_traces(quartilemethod="exclusive")
+10
+fig.show()
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 data["Credit_Score"].value_counts()
 
